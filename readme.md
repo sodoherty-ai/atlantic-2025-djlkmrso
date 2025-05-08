@@ -1,6 +1,6 @@
 # Atlantic Hackathon 2025
 
-## Team Members
+## Team
 
 - Declan Joyce
 - Lorna Kelleher
@@ -8,7 +8,6 @@
 - Simon O'Doherty
 
 ---
-
 ## Purpose
 
 [insert text here]
@@ -39,13 +38,12 @@ There is a current issue where tools fail in ollama. (See issues section)
    - `WATSONX_URL` : The start of the endpoint url.
    - `WATSONX_PROJECT_ID` : This is the `project_id`. 
    - `MODEL` : The model in watsonx studio to use. (leave default)
-   - `WATSONX_API_KEY` : Click the (i) icon in the window and it will bring you to where you can setup your API key. 
+   - `WATSONX_API_KEY` : Click the **ⓘ** icon in the window and it will bring you to where you can get your API key. 
 
 ---
-
 ## Running
 
-### Running a crew
+### Command line
 
 
     usage: run_crew.py [-h] [--ask-for-inputs] crew_identifier
@@ -75,7 +73,6 @@ See the `crews` folder for details on how to create a crew file.
 3. Your webapp should be available at:  http://127.0.0.1:8000
 
 ---
-
 ## Issues:
 
 ### Step 2 fails with dependancy conflicts or module not found.
@@ -91,7 +88,6 @@ See the `crews` folder for details on how to create a crew file.
 - waiting for fix. Use something other than Ollama until fixed.
 
 ---
-
 ## Folder details
 
 | Folder                 | Description                                                                                   |
@@ -105,11 +101,13 @@ See the `crews` folder for details on how to create a crew file.
 | `tools`                | Python based tools that crews can use.                                                        |
 | `webapp`               | Web based application.                                                                        |
 | `webapp/data`          | Data used for web application.                                                                |
+| `webapp/crews`         | Any crews related to the application                                                          |
 
+---
 ## Debugging
 
 ### Crew debugging
-Set `verbose` to `true`. 
+Set `verbose` to `true` in the related crew. 
 
 ### Litellm debugging.
 In your `.env` file set: `LITELLM_LOG=DEBUG`
