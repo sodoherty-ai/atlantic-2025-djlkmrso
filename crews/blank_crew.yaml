@@ -1,0 +1,35 @@
+# Blank template to get you started.
+verbose: true
+
+#inputs:
+#  variable_name: value
+#  variable_list:
+#    - item 1
+#    - item 2
+
+crew:
+  agents:
+    - agent1
+  tasks:
+    - task1
+  process: sequential
+
+agents:
+  - name: agent1
+    role: "Agent1"
+    goal: >
+      ...
+    backstory: >
+      ...
+#    tools:
+#      - web_search
+#      - read_web_page
+
+tasks:
+  - name: task1
+    description: |
+      ...
+    expected_output: >
+      ...
+    agent: "Agent1"
+#    output_file: crew_output/filename.txt

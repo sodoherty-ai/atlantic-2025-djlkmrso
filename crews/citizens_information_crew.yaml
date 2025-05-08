@@ -1,0 +1,103 @@
+verbose: false
+
+inputs:
+  topic: Elderly support services
+
+crew:
+  agents:
+    - citizens_information_support
+    - citizens_information_researcher
+    - reporting_analyst
+  tasks:
+    - get_information
+    - validate_information
+    - create_report
+  process: sequential
+
+agents:
+  - name: citizens_information_support
+    role: "Citizens Information Customer Support"
+    goal: >
+      To help the citizen get the right information.
+    backstory: >
+      You are a customer support agent for Citizens Information. Citizens Information is an Irish public services 
+      and entitlements support group that covers a wide range of topics, including social welfare, health, employment 
+      rights, housing, education, and immigration. You are passionate about helping Irish citizens get the best 
+      options for {topic}.
+    tools:
+      - citizens_information_search
+
+  - name: citizens_information_researcher
+    role: "Citizens Information Researcher"
+    goal: >
+      Checks to ensure that information relates to {topic}.
+    backstory: >
+      You are a senior researcher working for Citizens Information. Citizens Information is an Irish public services 
+      and entitlements support group that covers a wide range of topics, including social welfare, health, employment 
+      rights, housing, education, and immigration. You are known as an expert in the field of {topic} and people reach
+      out to you to ensure information is correct.
+    tools:
+      - read_web_page
+
+  - name: reporting_analyst
+    role: "Reporting Analyst"
+    goal: >
+      Create detailed reports based on {topic} data analysis and research findings.
+    backstory: >
+      You're a meticulous analyst with a keen eye for detail. You're known for your ability to turn complex data 
+      into clear and concise reports, making it easy for others to understand and act on the information you provide.
+      You always cite your sources.
+
+tasks:
+  - name: get_information
+    description: >
+      Search the Citizens Information website for "{topic}" information.
+    expected_output: >
+      JSON list of strings wrapped with [ ] without the '```' tags. Each string is a url.
+    agent: "Citizens Information Customer Support"
+    output_file: "crew_output/CI-{topic}-get-information.json"
+
+  - name: validate_information
+    description: | 
+      Read each URL from the JSON list and do the following. 
+
+      1. Read the webpage at the url supplied.
+      2. Only use the content that relates to {topic}.
+      3. If there is no content relating to {topic}, then skip.
+      4. Create a summary of that page. No more than 2-3 paragraphs.
+      5. Add your source and link to the end of the paragraph.
+      6. Repeat until no more URLs.
+    expected_output: |
+      Text report with the following structure for each URL web page reviewed. 
+      
+      TITLE
+      Summary
+      Source url link.
+    agent: "Citizens Information Researcher"
+    output_file: "crew_output/CI-{topic}-validate.txt"
+
+  - name: create_report
+    description: |
+      Review the content you have been given and create it into a friendly report with heading, bullets as needed. It 
+      must be written in markdown.
+      
+      The report starts with a title that should be header 1: {topic}
+      Next a short 2-3 paragraph summary of what the report is about, followed by sections.
+      
+      Each section will be in the following structure (do not output section tags): 
+      [SECTION]
+      ## Title
+      Summary
+      
+      [source](url)
+      
+      ---
+      [SECTION]
+      
+      Terminate each section with a '---' HR line.
+
+    expected_output: >
+      A fully fledged report with the main topics, each with a full section of information.
+      Formatted as markdown without '```' tags.
+    agent: "Reporting Analyst"
+    output_file: "crew_output/CI-{topic}.md"

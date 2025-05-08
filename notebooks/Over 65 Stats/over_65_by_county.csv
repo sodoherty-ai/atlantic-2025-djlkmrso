@@ -1,0 +1,349 @@
+CensusYear,County,Sex,VALUE
+2011,Carlow,All,1506.0
+2011,Carlow,Male,585.0
+2011,Carlow,Female,921.0
+2016,Carlow,All,1837.0
+2016,Carlow,Male,723.0
+2016,Carlow,Female,1114.0
+2022,Carlow,All,2169.0
+2022,Carlow,Male,877.0
+2022,Carlow,Female,1292.0
+2025,Carlow,All,2357.0
+2025,Carlow,Male,966.0
+2025,Carlow,Female,1391.0
+2011,Cavan,All,2443.0
+2011,Cavan,Male,1053.0
+2011,Cavan,Female,1390.0
+2016,Cavan,All,2755.0
+2016,Cavan,Male,1244.0
+2016,Cavan,Female,1511.0
+2022,Cavan,All,3235.0
+2022,Cavan,Male,1425.0
+2022,Cavan,Female,1810.0
+2025,Cavan,All,3506.0
+2025,Cavan,Male,1525.0
+2025,Cavan,Female,1981.0
+2011,Clare,All,3904.0
+2011,Clare,Male,1550.0
+2011,Clare,Female,2354.0
+2016,Clare,All,4529.0
+2016,Clare,Male,1830.0
+2016,Clare,Female,2699.0
+2022,Clare,All,5566.0
+2022,Clare,Male,2298.0
+2022,Clare,Female,3268.0
+2025,Clare,All,6170.0
+2025,Clare,Male,2575.0
+2025,Clare,Female,3596.0
+2022,Cork,All,13559.0
+2022,Cork,Male,5580.0
+2022,Cork,Female,7979.0
+2011,Cork City,All,4863.0
+2011,Cork City,Male,1540.0
+2011,Cork City,Female,3323.0
+2016,Cork City,All,5376.0
+2016,Cork City,Male,1855.0
+2016,Cork City,Female,3521.0
+2022,Cork City Council,All,8420.0
+2022,Cork City Council,Male,3068.0
+2022,Cork City Council,Female,5352.0
+2011,Cork County,All,10978.0
+2011,Cork County,Male,4076.0
+2011,Cork County,Female,6902.0
+2016,Cork County,All,12847.0
+2016,Cork County,Male,4941.0
+2016,Cork County,Female,7906.0
+2011,Donegal,All,5763.0
+2011,Donegal,Male,2340.0
+2011,Donegal,Female,3423.0
+2016,Donegal,All,6576.0
+2016,Donegal,Male,2743.0
+2016,Donegal,Female,3833.0
+2022,Donegal,All,7734.0
+2022,Donegal,Male,3286.0
+2022,Donegal,Female,4448.0
+2025,Donegal,All,8387.0
+2025,Donegal,Male,3597.0
+2025,Donegal,Female,4792.0
+2011,Dublin City,All,19588.0
+2011,Dublin City,Male,6215.0
+2011,Dublin City,Female,13373.0
+2016,Dublin City,All,20687.0
+2016,Dublin City,Male,7187.0
+2016,Dublin City,Female,13500.0
+2022,Dublin City Council,All,22654.0
+2022,Dublin City Council,Male,8390.0
+2022,Dublin City Council,Female,14264.0
+2022,Dún Laoghaire Rathdown,All,9734.0
+2022,Dún Laoghaire Rathdown,Male,2821.0
+2022,Dún Laoghaire Rathdown,Female,6913.0
+2011,Dún Laoghaire-Rathdown,All,7167.0
+2011,Dún Laoghaire-Rathdown,Male,1816.0
+2011,Dún Laoghaire-Rathdown,Female,5351.0
+2016,Dún Laoghaire-Rathdown,All,8273.0
+2016,Dún Laoghaire-Rathdown,Male,2270.0
+2016,Dún Laoghaire-Rathdown,Female,6003.0
+2011,Fingal,All,4013.0
+2011,Fingal,Male,1255.0
+2011,Fingal,Female,2758.0
+2016,Fingal,All,5103.0
+2016,Fingal,Male,1620.0
+2016,Fingal,Female,3483.0
+2022,Fingal,All,6929.0
+2022,Fingal,Male,2273.0
+2022,Fingal,Female,4656.0
+2025,Fingal,All,8074.0
+2025,Fingal,Male,2692.0
+2025,Fingal,Female,5383.0
+2022,Galway,All,7609.0
+2022,Galway,Male,3319.0
+2022,Galway,Female,4290.0
+2011,Galway City,All,1704.0
+2011,Galway City,Male,516.0
+2011,Galway City,Female,1188.0
+2016,Galway City,All,2095.0
+2016,Galway City,Male,636.0
+2016,Galway City,Female,1459.0
+2022,Galway City Council,All,2688.0
+2022,Galway City Council,Male,847.0
+2022,Galway City Council,Female,1841.0
+2011,Galway County,All,5476.0
+2011,Galway County,Male,2323.0
+2011,Galway County,Female,3153.0
+2016,Galway County,All,6339.0
+2016,Galway County,Male,2793.0
+2016,Galway County,Female,3546.0
+2011,Kerry,All,5276.0
+2011,Kerry,Male,2088.0
+2011,Kerry,Female,3188.0
+2016,Kerry,All,6191.0
+2016,Kerry,Male,2575.0
+2016,Kerry,Female,3616.0
+2022,Kerry,All,7773.0
+2022,Kerry,Male,3331.0
+2022,Kerry,Female,4442.0
+2025,Kerry,All,8710.0
+2025,Kerry,Male,3789.0
+2025,Kerry,Female,4923.0
+2011,Kildare,All,3636.0
+2011,Kildare,Male,1294.0
+2011,Kildare,Female,2342.0
+2016,Kildare,All,4561.0
+2016,Kildare,Male,1733.0
+2016,Kildare,Female,2828.0
+2022,Kildare,All,6049.0
+2022,Kildare,Male,2324.0
+2022,Kildare,Female,3725.0
+2025,Kildare,All,6966.0
+2025,Kildare,Male,2691.0
+2025,Kildare,Female,4275.0
+2011,Kilkenny,All,2745.0
+2011,Kilkenny,Male,1038.0
+2011,Kilkenny,Female,1707.0
+2016,Kilkenny,All,3203.0
+2016,Kilkenny,Male,1274.0
+2016,Kilkenny,Female,1929.0
+2022,Kilkenny,All,3815.0
+2022,Kilkenny,Male,1575.0
+2022,Kilkenny,Female,2240.0
+2025,Kilkenny,All,4164.0
+2025,Kilkenny,Male,1751.0
+2025,Kilkenny,Female,2414.0
+2011,Laois,All,2044.0
+2011,Laois,Male,769.0
+2011,Laois,Female,1275.0
+2016,Laois,All,2373.0
+2016,Laois,Male,989.0
+2016,Laois,Female,1384.0
+2022,Laois,All,2835.0
+2022,Laois,Male,1180.0
+2022,Laois,Female,1655.0
+2025,Laois,All,3099.0
+2025,Laois,Male,1289.0
+2025,Laois,Female,1810.0
+2011,Leitrim,All,1475.0
+2011,Leitrim,Male,690.0
+2011,Leitrim,Female,785.0
+2016,Leitrim,All,1645.0
+2016,Leitrim,Male,735.0
+2016,Leitrim,Female,910.0
+2022,Leitrim,All,2015.0
+2022,Leitrim,Male,908.0
+2022,Leitrim,Female,1107.0
+2025,Leitrim,All,2230.0
+2025,Leitrim,Male,1009.0
+2025,Leitrim,Female,1221.0
+2022,Limerick City &,All,8311.0
+2022,Limerick City &,Male,3301.0
+2022,Limerick City &,Female,5010.0
+2011,Limerick City and County,All,5974.0
+2011,Limerick City and County,Male,2141.0
+2011,Limerick City and County,Female,3833.0
+2016,Limerick City and County,All,6892.0
+2016,Limerick City and County,Male,2635.0
+2016,Limerick City and County,Female,4257.0
+2011,Longford,All,1407.0
+2011,Longford,Male,605.0
+2011,Longford,Female,802.0
+2016,Longford,All,1627.0
+2016,Longford,Male,701.0
+2016,Longford,Female,926.0
+2022,Longford,All,1966.0
+2022,Longford,Male,873.0
+2022,Longford,Female,1093.0
+2025,Longford,All,2161.0
+2025,Longford,Male,974.0
+2025,Longford,Female,1187.0
+2011,Louth,All,3488.0
+2011,Louth,Male,1182.0
+2011,Louth,Female,2306.0
+2016,Louth,All,3995.0
+2016,Louth,Male,1461.0
+2016,Louth,Female,2534.0
+2022,Louth,All,4844.0
+2022,Louth,Male,1820.0
+2022,Louth,Female,3024.0
+2025,Louth,All,5334.0
+2025,Louth,Male,2031.0
+2025,Louth,Female,3303.0
+2011,Mayo,All,5349.0
+2011,Mayo,Male,2244.0
+2011,Mayo,Female,3105.0
+2016,Mayo,All,5967.0
+2016,Mayo,Male,2606.0
+2016,Mayo,Female,3361.0
+2022,Mayo,All,7173.0
+2022,Mayo,Male,3141.0
+2022,Mayo,Female,4032.0
+2025,Mayo,All,7865.0
+2025,Mayo,Male,3448.0
+2025,Mayo,Female,4416.0
+2011,Meath,All,3676.0
+2011,Meath,Male,1270.0
+2011,Meath,Female,2406.0
+2016,Meath,All,4411.0
+2016,Meath,Male,1649.0
+2016,Meath,Female,2762.0
+2022,Meath,All,5651.0
+2022,Meath,Male,2159.0
+2022,Meath,Female,3492.0
+2025,Meath,All,6396.0
+2025,Meath,Male,2470.0
+2025,Meath,Female,3926.0
+2011,Monaghan,All,2027.0
+2011,Monaghan,Male,777.0
+2011,Monaghan,Female,1250.0
+2016,Monaghan,All,2234.0
+2016,Monaghan,Male,927.0
+2016,Monaghan,Female,1307.0
+2022,Monaghan,All,2692.0
+2022,Monaghan,Male,1175.0
+2022,Monaghan,Female,1517.0
+2025,Monaghan,All,2955.0
+2025,Monaghan,Male,1323.0
+2025,Monaghan,Female,1634.0
+2011,Offaly,All,2108.0
+2011,Offaly,Male,792.0
+2011,Offaly,Female,1316.0
+2016,Offaly,All,2437.0
+2016,Offaly,Male,926.0
+2016,Offaly,Female,1511.0
+2022,Offaly,All,2965.0
+2022,Offaly,Male,1202.0
+2022,Offaly,Female,1763.0
+2025,Offaly,All,3270.0
+2025,Offaly,Male,1369.0
+2025,Offaly,Female,1904.0
+2011,Roscommon,All,2661.0
+2011,Roscommon,Male,1149.0
+2011,Roscommon,Female,1512.0
+2016,Roscommon,All,2919.0
+2016,Roscommon,Male,1271.0
+2016,Roscommon,Female,1648.0
+2022,Roscommon,All,3441.0
+2022,Roscommon,Male,1540.0
+2022,Roscommon,Female,1901.0
+2025,Roscommon,All,3736.0
+2025,Roscommon,Male,1695.0
+2025,Roscommon,Female,2042.0
+2011,Sligo,All,2423.0
+2011,Sligo,Male,943.0
+2011,Sligo,Female,1480.0
+2016,Sligo,All,2809.0
+2016,Sligo,Male,1145.0
+2016,Sligo,Female,1664.0
+2022,Sligo,All,3402.0
+2022,Sligo,Male,1408.0
+2022,Sligo,Female,1994.0
+2025,Sligo,All,3744.0
+2025,Sligo,Male,1561.0
+2025,Sligo,Female,2183.0
+2011,South Dublin,All,4835.0
+2011,South Dublin,Male,1398.0
+2011,South Dublin,Female,3437.0
+2016,South Dublin,All,6208.0
+2016,South Dublin,Male,1918.0
+2016,South Dublin,Female,4290.0
+2022,South Dublin,All,8261.0
+2022,South Dublin,Male,2574.0
+2022,South Dublin,Female,5687.0
+2025,South Dublin,All,9530.0
+2025,South Dublin,Male,2982.0
+2025,South Dublin,Female,6548.0
+2011,Tipperary,All,5641.0
+2011,Tipperary,Male,2131.0
+2011,Tipperary,Female,3510.0
+2016,Tipperary,All,6369.0
+2016,Tipperary,Male,2484.0
+2016,Tipperary,Female,3885.0
+2022,Tipperary,All,7511.0
+2022,Tipperary,Male,3142.0
+2022,Tipperary,Female,4369.0
+2025,Tipperary,All,8157.0
+2025,Tipperary,Male,3534.0
+2025,Tipperary,Female,4633.0
+2022,Waterford City &,All,5257.0
+2022,Waterford City &,Male,2093.0
+2022,Waterford City &,Female,3164.0
+2011,Waterford City and County,All,3686.0
+2011,Waterford City and County,Male,1334.0
+2011,Waterford City and County,Female,2352.0
+2016,Waterford City and County,All,4340.0
+2016,Waterford City and County,Male,1637.0
+2016,Waterford City and County,Female,2703.0
+2011,Westmeath,All,2412.0
+2011,Westmeath,Male,847.0
+2011,Westmeath,Female,1565.0
+2016,Westmeath,All,2785.0
+2016,Westmeath,Male,1060.0
+2016,Westmeath,Female,1725.0
+2022,Westmeath,All,3446.0
+2022,Westmeath,Male,1405.0
+2022,Westmeath,Female,2041.0
+2025,Westmeath,All,3833.0
+2025,Westmeath,Male,1618.0
+2025,Westmeath,Female,2220.0
+2011,Wexford,All,4500.0
+2011,Wexford,Male,1712.0
+2011,Wexford,Female,2788.0
+2016,Wexford,All,5367.0
+2016,Wexford,Male,2134.0
+2016,Wexford,Female,3233.0
+2022,Wexford,All,6628.0
+2022,Wexford,Male,2721.0
+2022,Wexford,Female,3907.0
+2025,Wexford,All,7366.0
+2025,Wexford,Male,3073.0
+2025,Wexford,Female,4295.0
+2011,Wicklow,All,3527.0
+2011,Wicklow,Male,1167.0
+2011,Wicklow,Female,2360.0
+2016,Wicklow,All,4049.0
+2016,Wicklow,Male,1461.0
+2016,Wicklow,Female,2588.0
+2022,Wicklow,All,5242.0
+2022,Wicklow,Male,1966.0
+2022,Wicklow,Female,3276.0
+2025,Wicklow,All,5964.0
+2025,Wicklow,Male,2281.0
+2025,Wicklow,Female,3686.0

@@ -1,0 +1,142 @@
+county,name,type,recognised_provider,address,eircode
+Carlow,St. Dympna's Hospital,Psychiatric Hospital,No,"Athy Road, Carlow, Carlow",R93 DE62
+Cavan,Cavan General Hospital,General Hospital,Yes,"Lisdarn, Cavan, Cavan, H12 Y7W1",H12 Y7W1
+Clare,Cahercalla Community Hospital & Hospice,Community Hospital,No,"Cahercalla Road, Ennis, Clare",V95 NR59
+Clare,Ennis Hospital,General Hospital,Yes,"Gort Road, Lifford, Ennis, Clare, V95 HN29",V95 HN29
+Clare,"St. Joseph's Hospital, Ennis",Community Hospital,Yes,"Ennis, Clare",V95 RT99
+Cork,Bandon Community Hospital,Community Hospital,Yes,"Bandon, Cork",P72 W564
+Cork,Bantry General Hospital,General Hospital,Yes,"Carrignagat, Bantry, Cork, P75 DX93",P75 VP03
+Cork,"Bon Secours Hospital, Cork",Private Hospital,No,"College Road, Cork, Cork"
+Cork,Cork University Hospital,General Hospital,Yes,"Wilton Road, Wilton, Cork, T12 DC4A",T12 DC4A
+Cork,Cork University Maternity Hospital,Maternity Hospital,Yes,"Wilton Road, Wilton, Cork, T12 YE02",T12 YE02
+Cork,Kanturk Community Hospital,Community Hospital,Yes,"Kanturk, Cork"
+Cork,Mallow General Hospital,General Hospital,Yes,"Limerick Road, Kilknockan, Mallow, Cork, P51 N288",P51 N288
+Cork,Marymount University Hospital & Hospice,Specialist Hospital,Yes,"Curraheen, Cork, Cork"
+Cork,Mercy University Hospital,General Hospital,Yes,"Grenville Place, Cork City, Cork, T12 WE28",T12 WE28
+Cork,"Mount Alvernia Hospital, Mallow",Private Hospital,No,"Mallow, Cork"
+Cork,"Shanakiel Hospital, Cork",Community Hospital,Yes,"Gurranabraher, Cork, Cork"
+Cork,South Infirmary-Victoria University Hospital,General Hospital,Yes,"Old Blackrock Road, Cork City, Cork, T12 X23H",T12 X23H
+Cork,"St. Finbarr's Hospital, Cork",Community Hospital,Yes,"Douglas Road, Cork, Cork"
+Cork,"St. Mary's Health Campus, Cork",Community Hospital,Yes,"Gurranabraher, Cork, Cork"
+Cork,"Mater Private Hospital, Cork",Private Hospital,No,"Mahon, Cork, Cork"
+Cork,Clonakilty Community Hospital,Community Hospital,Yes,"Clonakilty, Cork"
+Cork,Castletownbere Community Hospital,Community Hospital,Yes,"Castletownbere, Cork"
+Cork,Dunmanway Community Hospital,Community Hospital,Yes,"Dunmanway, Cork"
+Cork,Schull Community Hospital,Community Hospital,Yes,"Schull, Cork"
+Cork,Skibbereen Community Hospital,Community Hospital,Yes,"Skibbereen, Cork"
+Cork,Macroom Community Hospital,Community Hospital,Yes,"Macroom, Cork"
+Cork,"St. Patrick's Community Hospital, Fermoy",Community Hospital,Yes,"Fermoy, Cork"
+Donegal,"Rock Hospital, Ballyshannon",Community Hospital,Yes,"Ballyshannon, Donegal"
+Donegal,Buncrana Community Hospital,Community Hospital,Yes,"Buncrana, Donegal"
+Donegal,Carndonagh Community Hospital,Community Hospital,Yes,"Carndonagh, Donegal"
+Donegal,Donegal Community Hospital,Community Hospital,Yes,"Donegal, Donegal"
+Donegal,Dungloe Community Hospital,Community Hospital,Yes,"Dungloe, Donegal"
+Donegal,Killybegs Community Hospital,Community Hospital,Yes,"Killybegs, Donegal"
+Donegal,Letterkenny University Hospital,General Hospital,Yes,"Kilmacrennan Road, Letterkenny, Donegal, F92 AE81",F92 AE81
+Donegal,Lifford Community Hospital,Community Hospital,Yes,"Lifford, Donegal"
+Dublin,Beacon Hospital,Private Hospital,No,"Beacon Court, Sandyford, Dublin 18, Dublin"
+Dublin,Beaumont Hospital,General Hospital,Yes,"Beaumont Road, Beaumont, Dublin 9, Dublin, D09 C562",D09 C562
+Dublin,Blackrock Clinic,Private Hospital,No,"Rock Road, Blackrock, Dublin"
+Dublin,Bloomfield Hospital,Psychiatric Hospital,No,"Stocking Lane, Rathfarnham, Dublin 16, Dublin"
+Dublin,"Bon Secours Hospital, Dublin",Private Hospital,No,"Glasnevin, Dublin 9, Dublin, D11 AHC0",D11 AHC0
+Dublin,Cappagh National Orthopaedic Hospital,Orthopaedic Hospital,Yes,"Cappagh Road, Finglas, Dublin 11, Dublin"
+Dublin,Central Mental Hospital (NFMHS),Psychiatric Hospital,Yes,"Portrane, Co. Dublin"
+Dublin,Cherry Orchard Hospital,Specialist Hospital,Yes,"Ballyfermot, Dublin 10, Dublin"
+Dublin,Clonskeagh Hospital,Community Hospital,Yes,"Clonskeagh, Dublin, Dublin"
+Dublin,Coombe Women & Infants University Hospital,Maternity Hospital,Yes,"Cork Street, Dublin 8, Dublin, D08 XW7X",D08 XW7X
+Dublin,Hermitage Medical Clinic,Private Hospital,No,"Old Lucan Road, Palmerstown, Dublin 20, Dublin, D20 W722",D20 W722
+Dublin,Highfield Hospital,Psychiatric Hospital,No,"Swords Road, Whitehall, Dublin 9, Dublin"
+Dublin,Incorporated Orthopaedic Hospital of Ireland,Orthopaedic Hospital,Yes,"Castle Avenue, Clontarf, Dublin 3, Dublin"
+Dublin,Connolly Hospital Blanchardstown,General Hospital,Yes,"Mill Road, Blanchardstown, Dublin 15, Dublin, D15 X40D",D15 X40D
+Dublin,Dublin Dental University Hospital,Specialist Hospital,Yes,"Lincoln Place, Dublin 2, Dublin"
+Dublin,Leopardstown Park Hospital,Community Hospital,Yes,"Foxrock, Co. Dublin"
+Dublin,Mater Misericordiae University Hospital,General Hospital,Yes,"Eccles Street, Dublin 7, Dublin, D07 R2WY",D07 R2WY
+Dublin,Mater Private Hospital,Private Hospital,No,"Eccles Street, Dublin 7, Dublin"
+Dublin,Mount Carmel Community Hospital,Specialist Hospital,No,"Braemor Road, Churchtown, Dublin 14, Dublin"
+Dublin,National Maternity Hospital,Maternity Hospital,Yes,"Holles Street, Dublin 2, Dublin, D02 YH21",D02 YH21
+Dublin,National Rehabilitation Hospital,Rehabilitation Hospital,Yes,"Rochestown Avenue, Dún Laoghaire, Dublin, A96 E2H2",A96 E2H2
+Dublin,"Our Lady's Children's Hospital, Crumlin",Children's Hospital,Yes,"Cooley Road, Crumlin, Dublin 12, Dublin, D12 N512",D12 N512
+Dublin,Peamount Hospital,Specialist Hospital,Yes,"Newcastle, Co. Dublin"
+Dublin,Rotunda Hospital,Maternity Hospital,Yes,"Parnell Square, Dublin 1, Dublin, D01 P5W9",D01 P5W9
+Dublin,Royal City of Dublin Hospital (Baggot Street Hospital),General Hospital,Yes,"Baggot Street, Dublin, Dublin"
+Dublin,Royal Hospital Donnybrook,Rehabilitation Hospital,Yes,"Bloomfield Avenue, Donnybrook, Dublin 4, Dublin"
+Dublin,Royal Victoria Eye and Ear Hospital,Specialist Hospital,Yes,"Adelaide Road, Dublin 2, Dublin, D02 XP78",D02 XP78
+Dublin,Sports Surgery Clinic,Specialist Hospital,No,"Santry Demesne, Dublin 9, Dublin"
+Dublin,St. Brendan's Hospital,Psychiatric Hospital,Yes,"Grangegorman, Dublin 7, Dublin"
+Dublin,St. Bricin's Military Hospital,Military Hospital,Yes,"Infirmary Road, Arbour Hill, Dublin 7, Dublin"
+Dublin,St. Columcille's Hospital,General Hospital,Yes,"Bray Road, Loughlinstown, Dublin 18, Dublin, D18 V9K1",D18 V9K1
+Dublin,St. Edmundsbury Hospital,Psychiatric Hospital,No,"Lucan, Co. Dublin"
+Dublin,St. James's Hospital,General Hospital,Yes,"James's Street, Dublin 8, Dublin, D08 NHY1",D08 NHY1
+Dublin,St. John of God Hospital,Psychiatric Hospital,No,"Stillorgan, Co. Dublin"
+Dublin,"St. Joseph's Hospital, Raheny",Community Hospital,Yes,"Springdale Road, Raheny, Dublin 5, Dublin"
+Dublin,"St. Luke's Hospital, Rathgar",Oncology Hospital,Yes,"Highfield Road, Rathgar, Dublin 6, Dublin"
+Dublin,"St. Michael's Hospital, Dún Laoghaire",General Hospital,Yes,"George's Street Lower, Dún Laoghaire, Dublin, A96 P902",A96 P902
+Dublin,St. Patrick's University Hospital,Psychiatric Hospital,No,"James's Street, Dublin 8, Dublin, D08 K7YW",D08 K7YW
+Dublin,St. Vincent's University Hospital,General Hospital,Yes,"Elm Park, Dublin 4, Dublin, D04 T6F4",D04 T6F4
+Dublin,Temple Street Children's University Hospital,Children's Hospital,Yes,"Temple Street, Dublin 1, Dublin, D01 XD99",D01 XD99
+Dublin,Tallaght University Hospital,General Hospital,Yes,"Tallaght, Dublin 24, Dublin, D24 TN3C",D24 TN3C
+Galway,"Bon Secours Hospital, Galway",Private Hospital,No,"Renmore, Galway, Galway"
+Galway,Galway Clinic,Private Hospital,No,"Doughiska Road, Galway, Galway"
+Galway,Merlin Park University Hospital,General Hospital,Yes,"Old Dublin Road, Galway City, Galway, H91 N973",H91 N973
+Galway,Portiuncula University Hospital,General Hospital,Yes,"Dunlo, Ballinasloe, Galway, H53 T971",H53 T971
+Galway,University Hospital Galway,General Hospital,Yes,"Newcastle Road, Galway City, Galway, H91 YR71",H91 YR71
+Kerry,"Bon Secours Hospital, Tralee",Private Hospital,No,"Tralee, Kerry"
+Kerry,Cahersiveen Community Hospital (St. Anne's),Community Hospital,Yes,"Cahersiveen, Kerry"
+Kerry,Dingle Community Hospital (West Kerry),Community Hospital,Yes,"Dingle, Kerry"
+Kerry,Kenmare Community Hospital,Community Hospital,Yes,"Kenmare, Kerry"
+Kerry,Killarney Community Hospital,Community Hospital,Yes,"Killarney, Kerry"
+Kerry,Listowel Community Hospital,Community Hospital,Yes,"Listowel, Kerry"
+Kerry,University Hospital Kerry,General Hospital,Yes,"Ratass, Tralee, Kerry, V92 NX94",V92 NX94
+Kildare,Clane General Hospital,Private Hospital,No,"Prosperous Road, Clane, Kildare"
+Kildare,Naas General Hospital,General Hospital,Yes,"Craddockstown Road, Naas East, Naas, Kildare, W91 AE76",W91 AE76
+Kildare,"St. Vincent's Hospital, Athy",Community Hospital,Yes,"Athy, Kildare"
+Kilkenny,Aut Even Hospital,Private Hospital,No,"Freshford Road, Kilkenny, Kilkenny"
+Kilkenny,Kilcreene Regional Orthopaedic Hospital,Orthopaedic Hospital,Yes,"Kilcreene Road, Kilcreene, Kilkenny, R95 DK07",R95 DK07
+Kilkenny,"St. Luke's General Hospital, Carlow/Kilkenny",General Hospital,Yes,"Freshford Road, Kilkenny City, Kilkenny, R95 FY71",R95 FY71
+Laois,Midland Regional Hospital Portlaoise,General Hospital,Yes,"Dublin Road, Portlaoise, Laois, R32 RW61",R32 RW61
+Laois,"St. Fintan's Hospital, Portlaoise",Psychiatric Hospital,Yes,"Portlaoise, Laois"
+Leitrim,"Our Lady's Hospital, Manorhamilton",General Hospital,Yes,"Manorhamilton, Leitrim"
+Leitrim,"St. Patrick's Community Hospital, Carrick-on-Shannon",Community Hospital,Yes,"Carrick-on-Shannon, Leitrim"
+Limerick,Bon Secours Hospital Limerick (Barringtons),Private Hospital,No,"George's Quay, Limerick, Limerick"
+Limerick,Croom Orthopaedic Hospital,Orthopaedic Hospital,Yes,"Skagh, Croom, Limerick, V35 F434",V35 F434
+Limerick,"St. Camillus' Hospital, Limerick",Community Hospital,Yes,"Shelbourne Road, Limerick, Limerick"
+Limerick,"St. John's Hospital, Limerick",General Hospital,Yes,"St John's Square, Limerick, Limerick, V94 H272",V94 H272
+Limerick,"St. Joseph's Hospital, Limerick",Psychiatric Hospital,Yes,"Mulgrave Street, Limerick, Limerick"
+Limerick,University Hospital Limerick,General Hospital,Yes,"St Nessan's Road, Dooradoyle, Limerick, V94 F858",V94 F858
+Limerick,University Maternity Hospital Limerick,Maternity Hospital,Yes,"Ennis Road, Limerick City, Limerick, V94 C566",V94 C566
+Louth,Louth County Hospital,General Hospital,Yes,"Dublin Road, Dundalk, Louth, A91 X0DP",A91 X0DP
+Louth,"Our Lady of Lourdes Hospital, Drogheda",General Hospital,Yes,"Windmill Road, Moneymore, Drogheda, Louth, A92 VW28",A92 VW28
+Mayo,Mayo University Hospital,General Hospital,Yes,"Westport Road, Knockaphunta, Castlebar, Mayo, F23 H529",F23 H529
+Mayo,Ballina District Hospital,Community Hospital,Yes,"Ballina, Mayo"
+Mayo,Belmullet District Hospital,Community Hospital,Yes,"Belmullet, Mayo"
+Mayo,Swinford District Hospital,Community Hospital,Yes,"Swinford, Mayo"
+Mayo,"Sacred Heart Hospital, Castlebar",Community Hospital,Yes,"Castlebar, Mayo"
+Meath,"Our Lady's Hospital, Navan",General Hospital,Yes,"Townparks, Navan, Meath, C15 RK7Y",C15 RK7Y
+Meath,"St. Joseph's Community Hospital, Trim",Community Hospital,Yes,"Trim, Meath"
+Monaghan,Monaghan Hospital,General Hospital,Yes,"Mullaghmonaghan, Monaghan, Monaghan, H18 NV91",H18 NV91
+Offaly,Birr Community Nursing Unit,Community Hospital,Yes,"Birr, Offaly"
+Offaly,Midland Regional Hospital Tullamore,General Hospital,Yes,"Arden Road, Tullamore, Offaly, R35 NY51",R35 NY51
+Roscommon,Roscommon University Hospital,General Hospital,Yes,"Athlone Road, Ardsallagh Beg, Roscommon, Roscommon, F42 AX61",F42 AX61
+Roscommon,"Sacred Heart Hospital, Roscommon",Community Hospital,Yes,"Golf Links Road, Roscommon, Roscommon"
+Sligo,Sligo University Hospital,General Hospital,Yes,"The Mall, Rathquarter, Sligo, Sligo, F91 H684",F91 H684
+Sligo,"St. John's Hospital, Sligo",Community Hospital,Yes,"Sligo, Sligo"
+Sligo,"Kingsbridge Private Hospital, Sligo",Private Hospital,No,"Garden Hill, Sligo, Sligo"
+Tipperary,"St. Brigid's District Hospital, Carrick-on-Suir",Community Hospital,Yes,"Carrick-on-Suir, Tipperary"
+Tipperary,"Tipperary University Hospital, Clonmel",General Hospital,Yes,"Western Road, Clonmel, Tipperary, E91 VY40",E91 VY40
+Tipperary,University Hospital Nenagh,General Hospital,Yes,"Tyone, Nenagh South, Nenagh, Tipperary, E45 PT86",E45 PT86
+Tipperary,"Our Lady's Hospital, Cashel",Community Hospital,Yes,"Dualla Road, Cashel, Tipperary"
+Waterford,"St. Joseph's Hospital, Dungarvan",Community Hospital,Yes,"Dungarvan, Waterford"
+Waterford,"St. Otteran's Hospital, Waterford",Psychiatric Hospital,Yes,"John's Hill, Waterford, Waterford"
+Waterford,"St. Vincent's Unit, Dungarvan",Community Hospital,Yes,"Dungarvan, Waterford"
+Waterford,University Hospital Waterford,General Hospital,Yes,"Dunmore Road, Waterford City, Waterford, X91 ER8E",X91 ER8E
+Waterford,UPMC Whitfield Hospital,Private Hospital,No,"Cork Road, Butlerstown, Waterford"
+Westmeath,Midland Regional Hospital Mullingar,General Hospital,Yes,"Longford Road, Mullingar, Westmeath, N91 NA43",N91 NA43
+Westmeath,"St. Francis Private Hospital, Mullingar",Private Hospital,No,"Ballinderry, Mullingar, Westmeath"
+Westmeath,"St. Mary's Hospital, Mullingar",Community Hospital,Yes,"Mullingar, Westmeath"
+Westmeath,"St. Loman's Hospital, Mullingar",Psychiatric Hospital,Yes,"Delvin Road, Mullingar, Westmeath"
+Wexford,"Ely Hospital, Wexford",Community Hospital,Yes,"Wexford, Wexford"
+Wexford,Gorey District Hospital,Community Hospital,Yes,"Gorey, Wexford"
+Wexford,"New Houghton Hospital, New Ross",Community Hospital,Yes,"New Ross, Wexford"
+Wexford,"St. John's Hospital, Enniscorthy",Community Hospital,Yes,"Enniscorthy, Wexford"
+Wexford,Wexford General Hospital,General Hospital,Yes,"Newtown Road, Carricklawn, Wexford, Wexford, Y35 Y17D",Y35 Y17D
+Wicklow,Newcastle Hospital,Psychiatric Hospital,Yes,"Newtownmountkennedy, Wicklow"
