@@ -10,7 +10,7 @@
 ---
 ## Purpose
 
-[insert text here]
+HAL (Health Advisor Lead) is an AI tool that aims to be part of a wider solution to help carers combat the challenges in caring for the valued elderly population.
 
 ---
 ## Installing
