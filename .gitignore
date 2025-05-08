@@ -1,0 +1,12 @@
+.idea
+.DS_Store
+**/.DS_Store
+__pycache__
+**/__pycache__
+/venv/
+.vscode/
+.venv/
+.env
+__pycache__/
+settings.yml
+/uv.lock
