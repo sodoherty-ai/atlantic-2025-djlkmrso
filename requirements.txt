@@ -19,3 +19,4 @@ dotenv
 langfuse
 litellm
 openlit
+fastapi

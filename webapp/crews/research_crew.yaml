@@ -1,0 +1,78 @@
+# Optional. For debugging.
+verbose: false
+
+# ---- properties to replace out where {variable} is used. ----
+inputs:
+  topic: Ireland Tourist events
+  current_year: May 2025
+
+# ---- CREW ----
+crew:
+  agents:
+    - researcher
+    - reporting_analyst
+  tasks:
+    - research_task
+    - reporting_task
+  process: sequential
+
+# ---- Your agents who will be assigned work ----
+agents:
+  - name: researcher
+    role: "{topic} Senior Data Researcher"
+    goal: >
+      Uncover cutting-edge developments in {topic}
+    backstory: >
+      You're a seasoned researcher with a knack for uncovering the latest developments in {topic}. Known for your 
+      ability to find the most relevant information and present it in a clear and concise manner. You always cite 
+      your sources.
+    tools:
+      - web_search
+
+  - name: reporting_analyst
+    role: "{topic} Reporting Analyst"
+    goal: >
+      Create detailed reports based on {topic} data analysis and research findings.
+    backstory: >
+      You're a meticulous analyst with a keen eye for detail. You're known for your ability to turn complex data 
+      into clear and concise reports, making it easy for others to understand and act on the information you provide.
+
+# ---- Tasks that need to be done and who is doing it. ----
+tasks:
+  - name: research_task
+    description: >
+      Conduct a thorough research about {topic}. Make sure you find any interesting and relevant information given
+      the current year is {current_year}.
+    expected_output: >
+      A list with 10 bullet points of the most relevant information about {topic} and URL/Title to the source material.
+    agent: "{topic} Senior Data Researcher"
+
+  - name: reporting_task
+    description: |
+      Review the context you got and expand each topic into a full section for a report. Make sure the report is 
+      detailed and contains any and all relevant information. 
+      
+      IMPORTANT! Every section must have a source line in it with the link to the source material. If there is no
+      source material then do not output that section.
+
+      The structure is: 
+      
+      <html>
+      <div>
+      <h1>{topic} for {current_year}</h1>
+
+      <!-- Repeat this section for each item --!>
+      <div>
+      <h2>title</h2>
+      main body of text here.
+      <br>
+      <pre>source: <a href="url" target="_blank" rel="noopener noreferrer">title</a></pre>
+      <hr>
+      <!--- End of repeat block --->
+      </html>
+
+
+    expected_output: >
+      A fully fledged report with the main topics, each with a full section of information.
+      Formatted as HTML without '```'
+    agent: "{topic} Reporting Analyst"
