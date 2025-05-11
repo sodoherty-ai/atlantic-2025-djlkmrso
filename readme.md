@@ -103,6 +103,7 @@ See the `crews` folder for details on how to create a crew file.
 Ollama will now work. If you run a pip update it will erase your changes.
 
 Example:
+
 <img src="litellm_hotfix.png">
 
 ---
