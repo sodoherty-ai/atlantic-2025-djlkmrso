@@ -24,7 +24,8 @@ HAL (Health Advisor Lead) is an AI tool that aims to be part of a wider solution
    - The `#` means the line is commented out. Remove it if you need to use that setting.
 
 ### Using Ollama: 
-There is a current issue where tools fail in ollama. (See issues section)
+There is a current issue where tools fail in ollama.<br>
+**(See issues section for fix)**
 
 1. Install [Ollama](https://ollama.com).
 2. from terminal also run: `ollama pull granite3.3`
@@ -85,7 +86,24 @@ See the `crews` folder for details on how to create a crew file.
 ###  IndexError: list index out of range in messages[msg_i]
 - Due to a bug in litellm. 
 - Logged: https://github.com/BerriAI/litellm/issues/10499
-- waiting for fix. Use something other than Ollama until fixed.
+- LiteLLM team have fixed but waiting for release. 
+
+#### Hotfix:
+1. In your virtual environment (eg. `.venv`) modify the following file:
+    
+
+    lib/python3.11/site-packages/litellm/litellm_core_utils/prompt_templates/factory.py
+
+2. Under the line `227` add the following code at the same indent.
+
+
+    if msg_i >= len(messages):
+        break
+
+Ollama will now work. If you run a pip update it will erase your changes.
+
+Example:
+<img src="litellm_hotfix.png">
 
 ---
 ## Folder details
