@@ -5,7 +5,7 @@
 - Declan Joyce (Presenter)
 - Lorna Kelleher (Designer)
 - Micheal Ryan (Developer)
-- Simon O'Doherty (Deloper)
+- Simon O'Doherty (Developer)
 
 ---
 ## Purpose
