@@ -65,13 +65,16 @@ Example:
 See the `crews` folder for details on how to create a crew file.
 
 ### Running web app.
-1. Go to the `webapp` folder. 
-2. From the command line run: 
+Go to the `webapp` folder.
 
+#### Mac
+1. run (one time): `chmod +x run.sh`
+2. run: `./run.sh`
 
-    uvicorn main:app --reload
+#### Windows
+1. run: `run.bat`
  
-3. Your webapp should be available at:  http://127.0.0.1:8000
+Your webapp should be available at:  http://127.0.0.1:8000 (if different it will report it to you)
 
 ---
 ## Issues:
