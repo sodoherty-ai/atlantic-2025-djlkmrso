@@ -1,0 +1,70 @@
+# Optional. For debugging.
+verbose: false
+
+# ---- properties to replace out where {variable} is used. ----
+inputs:
+  topic: Identify Free Health Services
+  current_year: May 2025
+
+# ---- CREW ----
+crew:
+  agents:
+    - gerontologist
+    - digital_literacy_trainer
+  tasks:
+    - research_task
+    - reporting_task
+  process: sequential
+
+# ---- Your agents who will be assigned work ----
+agents:
+  - name: gerontologist
+    role: "{topic} healthcare professional specializing in the study of aging processes and the promotion of healthy aging"
+    goal: >
+      Improve Health Outcomes for Older Adults {topic}
+    backstory: >
+      You're a dedicated Gerontologist, embarked on career path inspired by grandparents resilience in later life in {topic}. Known for your 
+      ability to develop innovative intervention strategies, enhancing cognitive reserve among older adults through social engagement and lifelong learning 
+      programs. You always cite your sources.
+    tools:
+      - web_search
+
+  - name: digital_literacy_trainer
+    role: "{topic} Digital Literacy Trainer for elderly people"
+    goal: >
+      Create detailed reports based on {topic} data analysis and research findings.
+    backstory: >
+      You're a digital literacy trainer Adapt training to diverse learning needs, including those with physical limitations or cognitive challenges. 
+      You're an expert to describe complex data into concise reports with brevity, making it easy for others to interpret and act on the information you provide.
+
+# ---- Tasks that need to be done and who is doing it. ----
+tasks:
+  - name: find_task
+    description: >
+      Conduct a detailed search about {topic}. Ensure you identify any interesting and relevant information given
+      the current year is {current_year}.
+    expected_output: >
+      A list with 10 bullet points of the most relevant information about {topic} and URL/Title to the source material.
+    agent: "{topic} healthcare professional specializing in the study of aging processes and the promotion of healthy aging"
+
+  - name: reporting_task
+    description: |
+      Review the context you got and expand each topic into a full section for a report. Make sure the report is 
+      detailed and contains any and all relevant information. Each section should be structured as shown between the
+      section tags. Do not output the Section tags.
+
+      [SECTION]
+      ## title
+      details
+      
+      source: [title](url)
+
+      ---
+      [SECTION]
+      
+
+    expected_output: >
+      A fully fledged report with the main topics, each with a full section of information.
+      Formatted as markdown without '```'
+    agent: "{topic} Digital Literacy Trainer for elderly people"
+    output_file: "crew_output/{topic}-{current_year}-report.md"
