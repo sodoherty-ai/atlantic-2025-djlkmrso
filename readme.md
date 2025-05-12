@@ -78,6 +78,7 @@ Your webapp should be available at:  http://127.0.0.1:8000 (if different it will
 
 ---
 ## Issues:
+Click to expand.
 
 <details><summary><b>Step 2 fails with dependancy conflicts or module not found.</b></summary>
 
@@ -145,6 +146,6 @@ In your `.env` file set: `LITELLM_LOG=DEBUG`
 
 ### Langfuse tracing
 
-1. Install [langfuse](https://langfuse.com/docs/get-started)
-2. In your `.env` file unremark the langfuse lines and update the keys/host.
-3. When your server is up it should be available at: [http://localhost:3000](http://localhost:3000)
+1. Create an account on [Langfuse](https://langfuse.com) or Install [langfuse](https://langfuse.com/docs/get-started) locally.
+2. In your `.env` file unremark the langfuse lines and update the keys/host. Go to tracing in langfuse to setup.
+3. Local or cloud, your hostname must end with: `/api/public/otel`
