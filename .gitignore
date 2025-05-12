@@ -10,3 +10,4 @@ __pycache__
 __pycache__/
 settings.yml
 /uv.lock
+presentations/~$*.pptx
