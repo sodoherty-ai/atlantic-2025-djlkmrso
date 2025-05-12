@@ -85,12 +85,12 @@ Your webapp should be available at:  http://127.0.0.1:8000 (if different it will
 - If you are, try this command: `pip install --upgrade -r requirements.txt --use-deprecated=legacy-resolver`
 
 </details>
-
+<p></p>
 <details><summary><b>UserWarning: <built-in function callable> is not a Python type ...</b></summary>
 
 - You can ignore. The warning is deep in crewAI. 
 </details>
-
+<p></p>
 <details><summary><b>IndexError: list index out of range in messages[msg_i]</b></summary>
 
 - Due to a bug in litellm. 
