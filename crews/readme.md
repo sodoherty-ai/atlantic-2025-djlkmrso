@@ -45,8 +45,7 @@ as you go.
 
 **Please try** to keep your outputs in the `crew_output` folder.
 
-**Important!:** The `agent` name must use the `role` value. (I need to figure out how to
-fix this).
+**Important!:** The `agent` name must use the `role` value.
 
 ## Tools available
 

@@ -28,7 +28,7 @@ There is a current issue where tools fail in ollama.<br>
 **(See issues section for fix)**
 
 1. Install [Ollama](https://ollama.com).
-2. from terminal also run: `ollama pull granite3.3`
+2. From terminal also run: `ollama pull granite3.3`
 3. Optionally change `granite3.3` to the model you picked in your `.env` file.
 
 ### Using watsonx.ai 
@@ -128,6 +128,7 @@ Example:
 | `notebooks`            | Jupyter notebooks used to build app. If it has data associated it should have its own folder. |
 | `notes`                | Documents/notes by the team                                                                   |
 | `notes/crew_templates` | Any crew agents or tasks you want to keep for later (otherwise not used)                      | 
+| `presentations` | Location of all presentation materials |
 | `tools`                | Python based tools that crews can use.                                                        |
 | `webapp`               | Web based application.                                                                        |
 | `webapp/data`          | Data used for web application.                                                                |
