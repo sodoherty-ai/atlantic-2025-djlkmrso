@@ -79,14 +79,20 @@ Your webapp should be available at:  http://127.0.0.1:8000 (if different it will
 ---
 ## Issues:
 
-### Step 2 fails with dependancy conflicts or module not found.
+<details><summary><b>Step 2 fails with dependancy conflicts or module not found.</b></summary>
+
 - Ensure you are on the correct version of python above.
 - If you are, try this command: `pip install --upgrade -r requirements.txt --use-deprecated=legacy-resolver`
 
-### UserWarning: <built-in function callable> is not a Python type ...
-- You can ignore. The warning is deep in crewAI. 
+</details>
 
-###  IndexError: list index out of range in messages[msg_i]
+<details><summary><b>UserWarning: <built-in function callable> is not a Python type ...</b></summary>
+
+- You can ignore. The warning is deep in crewAI. 
+</details>
+
+<details><summary><b>IndexError: list index out of range in messages[msg_i]</b></summary>
+
 - Due to a bug in litellm. 
 - Logged: https://github.com/BerriAI/litellm/issues/10499
 - LiteLLM team have fixed but waiting for release. 
@@ -108,6 +114,8 @@ Ollama will now work. If you run a pip update it will erase your changes.
 Example:
 
 <img src="litellm_hotfix.png">
+
+</details>
 
 ---
 ## Folder details
