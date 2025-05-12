@@ -64,7 +64,7 @@ Example:
 
 See the `crews` folder for details on how to create a crew file.
 
-### Running web app.
+### Running the web application.
 Go to the `webapp` folder.
 
 #### Mac
