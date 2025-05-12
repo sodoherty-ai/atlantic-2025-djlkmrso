@@ -2,16 +2,20 @@
 
 ## Team
 
-- Declan Joyce
-- Lorna Kelleher
-- Micheal Ryan
-- Simon O'Doherty
+- Declan Joyce (Presenter)
+- Lorna Kelleher (Designer)
+- Micheal Ryan (Developer)
+- Simon O'Doherty (Deloper)
 
 ---
 ## Purpose
 
 HAL (Health Advisor Lead) is an AI tool that aims to be part of a wider solution to help carers combat the challenges in caring for the valued elderly population.
 
+On May 16th, our team will Demo HALs Web User Interface. The demo will comprise of the following;
+1. Enter some sample requests that a typical carer persona would input to HAL. 
+2. Present the relvant HAL request output.
+3. Summarise how the HAL worklow works behind the scenes.
 ---
 ## Installing
 
