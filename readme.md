@@ -147,3 +147,4 @@ In your `.env` file set: `LITELLM_LOG=DEBUG`
 
 1. Install [langfuse](https://langfuse.com/docs/get-started)
 2. In your `.env` file unremark the langfuse lines and update the keys/host.
+3. When your server is up it should be available at: [http://localhost:3000](http://localhost:3000)
