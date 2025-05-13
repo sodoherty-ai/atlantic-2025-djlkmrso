@@ -1,16 +1,33 @@
-from fastapi import FastAPI, Request, WebSocket
-from fastapi.responses import HTMLResponse, JSONResponse
-from fastapi.templating import Jinja2Templates
-import pandas as pd
-import asyncio
-from yaml import safe_load
-from tools import available_tools
 from crewai import Crew
-import json
+from fastapi import FastAPI, Request, WebSocket
+from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse
+from fastapi.templating import Jinja2Templates
+from ollama import Client
+from tools import available_tools
+from textwrap import dedent
+from yaml import safe_load
 
+import asyncio
+import json
+import pandas as pd
+
+def reset():
+    global messages
+    messages = [
+        {'role': 'system',
+         'content': dedent('''
+             You are a helpful assistant. Answer questions briefly and naturally in a conversational way, 
+             responding one message at a time. Respond using HTML, for example CODE, PRE, and BR. 
+             ''').strip()
+         }
+    ]
 app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
+model_id = 'granite3.3'
+llm = Client()
+messages = []
+reset()
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
@@ -22,6 +39,25 @@ async def read_root(request: Request):
 @app.get("/work", response_class=JSONResponse)
 async def do_work():
     return {"message": "I worked"}
+
+@app.post('/message')
+async def message(request: Request):
+    global messages
+    data = await request.json()
+    user_input = data.get('message', '')
+    messages.append({'role': 'user', 'content': user_input})
+
+    def stream_response():
+        collected = ''
+        for chunk in llm.chat(model=model_id, messages=messages, stream=True):
+            content = chunk.get('message', {}).get('content', '')
+            if content:
+                collected += content
+        yield f'data: {collected}\n\n'
+
+        messages.append({'role': 'assistant', 'content': collected})
+
+    return StreamingResponse(stream_response(), media_type='text/event-stream')
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
@@ -47,6 +83,10 @@ async def websocket_endpoint(websocket: WebSocket):
     await asyncio.sleep(0.1)
     await websocket.close()
 
+@app.get('/reset_conversation')
+async def reset_conversation():
+    reset()
+    pass
 
 def run_crew(crew_name: str, inputs: dict | None = None) -> str:
     with open(f'crews/{crew_name}.yaml') as file:
@@ -80,5 +120,4 @@ def run_crew(crew_name: str, inputs: dict | None = None) -> str:
     )
 
     result = crew.kickoff(inputs=inputs_settings)
-
     return str(result)
