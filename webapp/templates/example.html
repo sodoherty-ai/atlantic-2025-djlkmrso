@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Table</title>
+</head>
+<script>
+    function run_crew() {
+        const crew = document.getElementById("crew_input").value;
+        const topic = document.getElementById("topic_input").value;
+        const year = document.getElementById("year_input").value;
+
+        const socket = new WebSocket("ws://localhost:8000/ws");
+
+        socket.onopen = () => {
+            const payload = JSON.stringify({crew, topic, year});
+            socket.send(payload);
+        };
+
+        socket.onmessage = (event) => {
+            document.getElementById("run_status").innerHTML = event.data
+        };
+    }
+</script>
+<body>
+<div><h2>Sample running a Crew</h2>
+    <div>Fill out the details and click the button. It will run the crew and return the results:</div><p></p>
+    <div><label>Crew: <input type="text" id="crew_input" value="research_crew"></label><br>
+        <label>Topic: <input type="text" id="topic_input" value="Ireland Tourist events"></label><br>
+        <label>Current Year: <input type="text" id="year_input" value="May 2025"></label><br>
+        <button onclick="run_crew()">Run Crew</button>
+    </div>
+    <hr>
+    <div id="run_status"><i>Results will render here</i></div>
+</div>
+
+
+<hr>
+<h2>Example of rendering table data to web page</h2>
+<h3>Over 65 by County</h3>
+<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc;">
+    <table>
+        <tr>
+            {% for key in data[0].keys() %}
+                <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in data %}
+            <tr>
+                {% for value in row.values() %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

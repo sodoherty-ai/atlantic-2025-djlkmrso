@@ -1,4 +1,4 @@
-# Documentation links
+# AI related Documentation links
 
 ## CrewAI
 - [Documentation](https://docs.crewai.com/introduction)
@@ -11,3 +11,7 @@
 
 ## Langchain
 - [Documentation](https://python.langchain.com/docs/introduction/)
+
+## Langfuse
+- [Documentation](https://langfuse.com)
+

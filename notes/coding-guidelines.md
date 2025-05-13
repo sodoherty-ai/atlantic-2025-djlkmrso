@@ -4,7 +4,9 @@ The following rules are required when building this application.
 
 1. Implementation must be as lightweight and simple as possible to setup and run on a local machine.
 
+
 2. Any hard pieces need to be prebuilt to help in this.
+
 
 3. Any AI generated code must be marked as such in the code file. Example:
 
@@ -16,11 +18,10 @@ The following rules are required when building this application.
 
 4. No [vibe coding](https://en.wikipedia.org/wiki/Vibe_coding). If you don't understand what the code does, you can't use it.
 
-5. IBM license must be on all code.
-*(Need to check internal guidelines here for this)*
 
-6. Implementation must be AI agnostic. Easy to switch out models as required.
+5. Implementation must be AI agnostic. Easy to switch out models as required.
 
-7. All prompts/crew/tasks must be independant of the code.
+
+6. All prompts/crew/tasks must be independent of the code.
 
 
