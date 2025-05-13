@@ -50,21 +50,30 @@ tasks:
   - name: reporting_task
     description: |
       Review the context you got and expand each topic into a full section for a report. Make sure the report is 
-      detailed and contains any and all relevant information. Each section should be structured as shown between the
-      section tags. Do not output the Section tags.
-
-      [SECTION]
-      ## title
-      details
+      detailed and contains any and all relevant information. 
       
-      source: [title](url)
+      IMPORTANT! Every section must have a source line in it with the link to the source material. If there is no
+      source material then do not output that section.
 
-      ---
-      [SECTION]
+      The structure is: 
       
+      <html>
+      <div>
+      <h1>{topic} for {current_year}</h1>
+
+      <!-- Repeat this section for each item --!>
+      <div>
+      <h2>title</h2>
+      main body of text here.
+      <br>
+      <pre>source: <a href="url" target="_blank" rel="noopener noreferrer">title</a></pre>
+      <hr>
+      <!--- End of repeat block --->
+      </html>
+
 
     expected_output: >
       A fully fledged report with the main topics, each with a full section of information.
-      Formatted as markdown without '```'
+      Formatted as HTML without '```'
+
     agent: "{topic} Digital Literacy Trainer for elderly people"
-    output_file: "crew_output/{topic}-{current_year}-report.md"
