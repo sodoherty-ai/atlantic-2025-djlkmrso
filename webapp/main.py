@@ -64,8 +64,8 @@ def reset():
 
     messages = [
         { 'role': 'system', 'content': system_message},
-        { 'role': 'user', 'content': 'Hi, I am over 65 and all my questions will relate to that'},
-        { 'role': 'assistant', 'content': 'Ok I will remember this.' }
+        { 'role': 'user', 'content': 'Hi, I am over 65 and live in Ireland. All my questions will relate to that'},
+        { 'role': 'assistant', 'content': 'Ok I will remember this and check my tools first before responding.' }
     ]
 
 
@@ -148,7 +148,9 @@ def run_crew(crew_name: str, question: str) -> str:
         agents_data = settings.get('agents', None)
         tasks_data = settings.get('tasks', None)
         crew_settings = settings.get('crew', None)
-        input_settings = { 'topic': question }
+
+        new_question = f'For the over 65 {question}'
+        input_settings = { 'topic': new_question }
 
         verbose_settings = settings.get('verbose', False)
 
@@ -164,11 +166,13 @@ def run_crew(crew_name: str, question: str) -> str:
         span = trace.span(
             name='crew-called',
             input=crew_name,
+            output=new_question,
             metadata={
                 'agents': agents_data,
                 'tasks': tasks_data,
                 'crew': crew_settings,
-                'topic': question,
+                'question': question,
+                'shaped': new_question,
                 'verbose': verbose_settings
             }
         )
