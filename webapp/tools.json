@@ -1,23 +1,6 @@
 [
   {
-    "name": "tool_debug_placeholder",
-    "description": "This is a placeholder tool used only for debugging and evaluation. It should never be called."
-  },
-  {
     "name": "tool_citizens_information",
-    "description": "Answer questions related to government services, benefits, entitlements, legal rights, or public resources in the Ireland.",
-    "parameters": {
-      "type": "object",
-      "properties": {
-        "topic": {
-          "type": "string",
-          "description": "A specific government-related query from the user, such as 'disability allowance in Ireland' Alter the question to give more context as needed."
-        }
-      },
-      "return": {
-        "type": "string",
-        "description": "A concise, plain-language explanation that addresses the user's question, including links or further actions if relevant."
-      }
-    }
+    "description": "Government related services, travel, housing, benefits, entitlements, legal rights, or public resources in the Ireland."
   }
 ]

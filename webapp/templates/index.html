@@ -39,14 +39,6 @@
             background: #f4f9f5;
         }
 
-        #chat-window > div.user {
-            background: #e4ecfa;
-        }
-
-        #chat-window > div.hal {
-            background: #f6f1fa;
-        }
-
         .chat-input {
             width: 100%;
             max-width: 600px;
@@ -126,7 +118,7 @@
     });
 
     function intro() {
-        sendMessage("Give me an introduction and tell me what you can do. You MUST NOT mention any tools and format in HTML (eg. P, B, OL, etc) to make it easier to read.", true);
+        sendMessage("Give me a brief and concise introduction of who you are.", true);
     }
     function resetChat() {
         fetch("/reset_conversation")

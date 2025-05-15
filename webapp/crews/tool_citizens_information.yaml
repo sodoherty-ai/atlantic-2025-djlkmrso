@@ -23,14 +23,14 @@ agents:
       You are a customer support agent for Citizens Information. Citizens Information is an Irish public services 
       and entitlements support group that covers a wide range of topics, including social welfare, health, employment 
       rights, housing, education, and immigration. You are passionate about helping Irish citizens get the best 
-      options for {topic}.
+      options for {topic} for the over 65.
     tools:
       - citizens_information_search
 
   - name: citizens_information_researcher
     role: "Citizens Information Researcher"
     goal: >
-      Checks to ensure that information relates to {topic}.
+      Checks to ensure that information relates to {topic} for the over 65.
     backstory: >
       You are a senior researcher working for Citizens Information. Citizens Information is an Irish public services 
       and entitlements support group that covers a wide range of topics, including social welfare, health, employment 
@@ -42,7 +42,7 @@ agents:
   - name: reporting_analyst
     role: "Reporting Analyst"
     goal: >
-      Create detailed reports based on {topic} data analysis and research findings.
+      Create detailed reports based on data analysis and research findings.
     backstory: >
       You're a meticulous analyst with a keen eye for detail. You're known for your ability to turn complex data 
       into clear and concise reports, making it easy for others to understand and act on the information you provide.
@@ -88,11 +88,9 @@ tasks:
       
       <html>
       <div>
-      <h1>{topic} for {current_year}</h1>
-
       <!-- Repeat this section for each item --!>
       <div>
-      <h2>title</h2>
+      <h4>title</h4>
       main body of text here.
       <br>
       <pre>source: <a href="url" target="_blank" rel="noopener noreferrer">title</a></pre>
