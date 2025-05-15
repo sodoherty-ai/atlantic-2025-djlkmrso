@@ -115,7 +115,7 @@
 
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-        sendMessage("Give me an introduction and tell me what you can do. Do not mention any tools for just this response and format in HTML (eg. P, B, OL, etc) to make it easier to read.", true);
+        intro();
     });
 
     document.getElementById('chat-input').addEventListener('keydown', function (e) {
@@ -125,12 +125,16 @@
         }
     });
 
+    function intro() {
+        sendMessage("Give me an introduction and tell me what you can do. You MUST NOT mention any tools and format in HTML (eg. P, B, OL, etc) to make it easier to read.", true);
+    }
     function resetChat() {
         fetch("/reset_conversation")
             .then(res => {
                 if (res.ok) {
                     document.getElementById("chat-window").innerHTML = "";
                     document.getElementById("chat-input").value = "";
+                    intro();
                 }
             });
     }
@@ -152,7 +156,7 @@
         fetch("/message", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({message})
+            body: JSON.stringify({message, silent})
         }).then(async response => {
             const reader = response.body.getReader();
             const decoder = new TextDecoder("utf-8");
@@ -166,7 +170,14 @@
                 const {value, done} = await reader.read();
                 if (done) break;
                 const chunk = decoder.decode(value, {stream: true});
-                halMsg.innerHTML += chunk.replace(/^data:\s*/gm, '');
+                const text = chunk.replace(/^data:\s*/gm, '');
+                if (text.trim() === '<tool-called>') {
+                    halMsg.querySelector('i').classList.remove('text-success');
+                    halMsg.querySelector('i').classList.add('text-warning');
+                } else {
+                    halMsg.innerHTML += text;
+                }
+
             }
         });
 

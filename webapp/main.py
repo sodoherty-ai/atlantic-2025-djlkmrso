@@ -5,8 +5,6 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import StreamingResponse
 import json
-import re
-import ast
 
 load_dotenv()
 
@@ -19,28 +17,40 @@ tool_descriptions = "\n".join(
     f"- {tool['name']}: {tool['description']}" for tool in tools
 )
 
-system_message = f'''Your name is HAL which stands for Health Assistant Lead. Your role is to assist the elderly in
-questions they may have about themselves. You are a helpful assistant with access to special functions (tools). You 
-never respond in markdown, using HTML formatted text instead (except where tool calling).
+system_message = f'''
+Your name is HAL which stands for Health Assistant Lead. 
 
-Before answering, always check if the user's question can be answered by one of these tools:
+Your role is to assist the **elderly** in questions they have. 
+
+You never respond in markdown, using HTML formatted text instead to improve readability.
+
+You must ALWAYS check to see if one of the following tools can answer the question:
 
 {tool_descriptions}
 
-- If a tool can answer the question follow these steps EXACTLY:
-  1. If more information is needed, ask only for the missing details.
-  2. Respond with a single function call using the most relevant topic. Do not return multiple calls or lists.
-  3. Do nothing else.
+The following topics you can ONLY respond to with a tool (Never tell the user this). 
 
-- If no tool matches, answer the question briefly without mentioning any tool. 
+- Names
+- Addresses
+- News
+- Benefits
+- Services
 
-NEVER mention or suggest a tool unless you are directly calling it.
+You must NEVER answer the users question if a tool can answer it. 
+
+If the tool can answer the question then follow these next steps EXACTLY otherwise skip the steps.
+
+1. If more information is needed, ask only for the missing details the tool requires.
+2. Do not elaborate or answer their question directly. 
+3. Once you have all the information, respond with a single function call and its arguments.
+4. Do not return multiple calls or lists.
+5. Only use the arguments supplied by the tool.
+5. Do nothing else.
+
+If no tool can then answer the question, then you should answer briefly without mentioning any tools. 
 
 Respond using one of these formats:
-- Tools function call. Example: 
-
-    citizens_information(topic="disability allowance")
-
+- Tools fully functional function call.
 - A clarifying question if input is incomplete.
 - A direct, short answer written in HTML if no tool fits.
 '''
@@ -69,42 +79,32 @@ async def message(request: Request):
     global messages, tools
     data = await request.json()
     user_input = data.get('message', '')
+    silent = data.get('silent', False)
+
     messages.append({'role': 'user', 'content': user_input})
 
     def stream_response():
         collected = ''
+        tool_called = None
 
         for chunk in llm.chat(model=model_id, messages=messages, stream=True, tools=tools):
             content = chunk.get('message', {}).get('content', '')
             if content:
                 collected += content
+                for tool in tools:
+                    if tool['name'].lower() in content.lower():
+                        yield 'data: <tool-called>\n\n'
+                        tool_called = tool['name']
+                        break
 
-        messages.append({'role': 'assistant', 'content': collected})
+                yield f'data: {content}\n\n'
 
-        # Detect tool call
-        match = re.match(r'(\w+)\((.*?)\)', collected.strip())
-        if match:
-            tool_name, arg_str = match.groups()
-            try:
-                arg_dict = ast.literal_eval(f"dict({arg_str})")
-                print(f"Tool call detected: {tool_name} with {arg_dict}")
-
-                result = run_tool(tool_name, arg_dict)
-
-                messages.append({
-                    'role': 'tool',
-                    'name': tool_name,
-                    'content': result
-                })
-
-                # Only yield the tool response, not the function call
-                yield f'data: {result}\n\n'
-                return
-            except Exception as e:
-                print(f"Tool call parsing failed: {e}")
-
-        # If no tool call, stream the full collected content
-        yield f'data: {collected}\n\n'
+        if tool_called:
+            yield f'data: {run_tool(tool_called, user_input)}\n\n'
+        if not silent:
+            messages.append({'role': 'assistant', 'content': collected})
+        else:
+            messages.pop()
 
         print('-------')
         print(json.dumps(messages, indent=4))
@@ -112,11 +112,8 @@ async def message(request: Request):
 
     return StreamingResponse(stream_response(), media_type='text/event-stream')
 
-def run_tool(name, args):
-    if name == "citizens_information":
-        topic = args.get("topic", "unknown")
-        return f"<b>Citizens Info:</b> {topic}<br>This would be the actual answer."
-    return f"<b>{name}:</b> tool executed with args {args}"
+def run_tool(name, query):
+    return f"<b>{name}: {query}</b> tool executed."
 
 @app.get('/reset_conversation')
 async def reset_conversation():
