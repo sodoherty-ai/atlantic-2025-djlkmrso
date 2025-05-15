@@ -8,14 +8,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
             crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <style>
-        body, html {
-            height: 100%;
+        body {
+            background: linear-gradient(135deg, #f9fafb 0%, #e8eceb 100%);
+            min-height: 100vh;
         }
 
         #chat-window {
+            background: #f7faf7;
+            border: 1.5px solid #d1e7dd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(200, 210, 200, 0.09);
+            color: #253934;
+            font-size: 1.05rem;
+
             height: 70vh;
             overflow-y: auto;
             border: 1px solid #ccc;
@@ -23,50 +31,79 @@
             background: #f8f9fa;
         }
 
-        .chat-input {
-            position: relative;
+ .chat-input {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.chat-input .form-control {
+    border-radius: 20px 0 0 20px;
+}
+.chat-input .send-icon {
+    border-radius: 0 20px 20px 0;
+    border-left: none;
+    color: #5fa5a4;
+    background: #f8fafc;
+    transition: color 0.2s, background 0.2s;
+}
+.chat-input .send-icon:hover, .chat-input .send-icon:focus {
+    color: #367b79;
+    background: #e0f7fa;
+}
+
+        #chat-window > div {
+            margin-bottom: 0.5rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            background: #f1f4f6;
         }
 
-        .chat-input input {
-            padding-right: 40px;
+        #chat-window > div:nth-child(odd) {
+            background: #f4f9f5;
         }
 
-        .chat-input .send-icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
+        #chat-window > div.user {
+            background: #e4ecfa;
         }
+
+        #chat-window > div.hal {
+            background: #f6f1fa;
+        }
+
+
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">HAL - Health Assistant Lead</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="d-flex ms-auto" role="reset_conversation">
-                <button class="btn btn-outline-success" type="button" onclick="resetChat()">Reset</button>
-            </form>
+<div class="py-3 px-4"
+     style="background: linear-gradient(to right, #d4e8d4, #f0f9f0); border-bottom: 2px solid #a2c4a2;">
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-heart-pulse-fill me-2 text-success" style="font-size: 1.5rem;"></i>
+            <h5 class="mb-0 fw-semibold text-success">HAL - Health Assistant Lead</h5>
         </div>
+        <form class="d-flex ms-auto" role="presentation">
+            <button class="btn btn-outline-success" type="button" onclick="resetChat()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+        </form>
     </div>
-</nav>
-<div class="container-fluid py-2">
-    <div class="chat-input">
-        <input type="text" id="chat-input" class="form-control" placeholder="Type a message...">
-        <span class="send-icon" onclick="sendMessage()">
-        <i class="bi bi-send-fill"></i>
-      </span>
-    </div>
-    <div id="chat-window" class="mb-3"></div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+<div class="container-fluid py-2">
+    <div id="chat-window" class="mb-3"></div>
+<div class="chat-input input-group">
+    <input type="text" id="chat-input" class="form-control" placeholder="Type a message...">
+    <button class="btn btn-outline-secondary send-icon" type="button" onclick="sendMessage()">
+        <i class="bi bi-send-fill"></i>
+    </button>
+</div>
+</div>
+
 <script>
+    window.addEventListener('DOMContentLoaded', () => {
+    sendMessage("Give me an introduction and tell me what you can do. Do not mention any tools for just this response and format in HTML (eg. P, B, OL, etc) to make it easier to read.", true);
+});
+
     document.getElementById('chat-input').addEventListener('keydown', function (e) {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -84,40 +121,43 @@
             });
     }
 
-    function sendMessage() {
-        const input = document.getElementById('chat-input');
-        const text = input.value.trim();
-        if (!text) return;
+function sendMessage(text = null, silent = false) {
+    const input = document.getElementById('chat-input');
+    const message = text || input.value.trim();
+    if (!message) return;
 
-        const chatWindow = document.getElementById('chat-window');
+    const chatWindow = document.getElementById('chat-window');
 
+    if (!silent) {
         const userMsg = document.createElement('div');
-        userMsg.textContent = `You :> ${text}`;
+        userMsg.textContent = message;
+        userMsg.classList.add('user');
         chatWindow.appendChild(userMsg);
-
-
-        fetch("/message", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({message: text})
-        }).then(async response => {
-            const reader = response.body.getReader();
-            const decoder = new TextDecoder("utf-8");
-
-            const halMsg = document.createElement('div');
-            halMsg.textContent = 'HAL :> ';
-            document.getElementById('chat-window').appendChild(halMsg);
-
-            while (true) {
-                const {value, done} = await reader.read();
-                if (done) break;
-                const chunk = decoder.decode(value, {stream: true});
-                halMsg.innerHTML += chunk.replace(/^data:\s*/gm, '');
-            }
-        });
-
-        input.value = '';
     }
+
+    fetch("/message", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message})
+    }).then(async response => {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder("utf-8");
+
+        const halMsg = document.createElement('div');
+        halMsg.innerHTML = '<i class="bi bi-heart-pulse-fill me-2 text-success"></i> <strong>HAL</strong><br>';
+        halMsg.classList.add('hal');
+        chatWindow.appendChild(halMsg);
+
+        while (true) {
+            const {value, done} = await reader.read();
+            if (done) break;
+            const chunk = decoder.decode(value, {stream: true});
+            halMsg.innerHTML += chunk.replace(/^data:\s*/gm, '');
+        }
+    });
+
+    if (!text) input.value = '';
+}
 
 </script>
 </body>
