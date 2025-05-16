@@ -14,12 +14,14 @@ from langfuse import Langfuse
 load_dotenv()
 
 # Lang fuse code
-user_id = env['LANGFUSE_ID']
-langfuse = Langfuse(
-    public_key=env['LANGFUSE_PUBLIC_KEY'],
-    secret_key=env['LANGFUSE_SECRET_KEY'],
-    host='https://cloud.langfuse.com'
-)
+if 'LANGFUSE_HOST' in env:
+    user_id = env['LANGFUSE_ID']
+    langfuse = Langfuse(
+        public_key=env['LANGFUSE_PUBLIC_KEY'],
+        secret_key=env['LANGFUSE_SECRET_KEY'],
+        host='https://cloud.langfuse.com'
+    )
+
 trace = None
 
 model_id = 'granite3.3'
