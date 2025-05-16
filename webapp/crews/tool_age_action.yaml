@@ -3,49 +3,85 @@ verbose: false
 
 # ---- properties to replace out where {variable} is used. ----
 inputs:
-  topic: ageaction.ie get-help
+  topic: ageaction.ie home repairs updates to home after discharged from hospital
 
 # ---- CREW ----
 crew:
   agents:
-    - researcher
+    - age_action_support
+    - age_action_researcher
     - reporting_analyst
   tasks:
-    - research_task
-    - reporting_task
+    - get_information
+    - validate_information
+    - create_report
   process: sequential
 
 # ---- Your agents who will be assigned work ----
 agents:
-  - name: researcher
-    role: "{topic} Senior Data Researcher"
+  - name: age_action_support
+    role: "Age Action Senior Customer Support"
     goal: >
       Uncover cutting-edge developments in {topic}
     backstory: >
-      You're a seasoned researcher with a knack for uncovering the latest developments in {topic}. Known for your 
+      You're a seasoned researcher for ageaction with a knack for uncovering the latest developments in {topic}. Known for your 
       ability to find the most relevant information and present it in a clear and concise manner. You always cite 
       your sources.
     tools:
       - web_search
 
+  - name: age_action_researcher
+    role: "Age Action Researcher"
+    goal: >
+      Checks to ensure that information relates to {topic}.
+    backstory: >
+      You are a senior researcher working for Age Action. Age Action in Ireland promotes an inclusive and age-positive society. 
+      We make our vision a reality through advocacy, DIY services in people’s homes and education. Their aim is to challenging ageism, 
+      promoting everyone’s agency in older age and finding solutions to the disadvantages we face as we grow older.
+      Citizens Information is an Irish public services. You are known as an expert in the field of {topic} and people reach
+      out to you to ensure information is correct.
+    tools:
+      - read_web_page
+
   - name: reporting_analyst
-    role: "{topic} Reporting Analyst"
+    role: "Age Action Reporting Analyst"
     goal: >
       Create detailed reports based on {topic} data analysis and research findings.
     backstory: >
       You're a meticulous analyst with a keen eye for detail. You're known for your ability to turn complex data 
       into clear and concise reports, making it easy for others to understand and act on the information you provide.
+      You always cite your sources.
 
 # ---- Tasks that need to be done and who is doing it. ----
 tasks:
-  - name: research_task
+  - name: get_information
     description: >
-      Conduct a thorough research about {topic}.
+      Search the ageaction.ie website for "{topic}" information.
     expected_output: >
-      A list with 5 bullet points of the most relevant information about {topic} and URL/Title to the source material.
-    agent: "{topic} Senior Data Researcher"
+      JSON list of strings wrapped with [ ] without the '```' tags. Each string is a url.
+    agent: "Age Action Senior Customer Support"
+    output_file: "crew_output/AA-{topic}-get-information.json"
 
-  - name: reporting_task
+  - name: validate_information
+    description: | 
+      Read each URL from the JSON list and do the following. 
+
+      1. Read the webpage at the url supplied.
+      2. Only use the content that relates to {topic}.
+      3. If there is no content relating to {topic}, then skip.
+      4. Create a summary of that page. No more than 2-3 paragraphs.
+      5. Add your source and link to the end of the paragraph.
+      6. Repeat until no more URLs.
+    expected_output: |
+      Text report with the following structure for each URL web page reviewed. 
+      
+      TITLE
+      Summary
+      Source url link.
+    agent: "Age Action Researcher"
+    output_file: "crew_output/AA-{topic}-validate.txt"
+
+  - name: create_report
     description: |
       Review the context you got and expand each topic into a full section for a report. Make sure the report is 
       detailed and contains any and all relevant information. 
@@ -71,4 +107,4 @@ tasks:
     expected_output: >
       A fully fledged report with the main topics, each with a full section of information.
       Formatted as HTML without '```' tags.
-    agent: "{topic} Reporting Analyst"
+    agent: "Age Action Reporting Analyst"
