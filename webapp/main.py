@@ -23,6 +23,7 @@ if 'LANGFUSE_HOST' in env:
     )
 
 trace = None
+span = None
 
 model_id = 'granite3.3'
 
@@ -222,12 +223,13 @@ def run_crew(crew_name: str, question: str) -> str:
 
         result = crew.kickoff(inputs=input_settings)
 
-        parent_span = trace.span(
-            name='crew-completed',
-            input=crew_name,
-            output=str(result),
-            metadata=result.model_dump()
-        )
+        if trace:
+            span = trace.span(
+                name='crew-completed',
+                input=crew_name,
+                output=str(result),
+                metadata=result.model_dump()
+            )
 
         return f'Here is what the crew found on what you asked.<br><br>{str(result.raw)}'
     except Exception as e:
