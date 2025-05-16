@@ -53,18 +53,18 @@ def reset():
         })
         span.end()
 
-    trace = langfuse.trace(
-        name='HAL Session started',
-        user_id=user_id
-    )
-    span = trace.span(
-        name='system_prompt',
-        input=system_message,
-        metadata = {
-            'tools': tools,
-            'tools_descriptions': tool_descriptions
-        }
-    )
+        trace = langfuse.trace(
+            name='HAL Session started',
+            user_id=user_id
+        )
+        span = trace.span(
+            name='system_prompt',
+            input=system_message,
+            metadata = {
+                'tools': tools,
+                'tools_descriptions': tool_descriptions
+            }
+        )
 
     messages = [
         { 'role': 'system', 'content': system_message},
@@ -113,16 +113,17 @@ async def message(request: Request):
                     if not tool_called:
                         yield f'data: {content}\n\n'
         finally:
-            span = trace.span(
-                name='ollama-called',
-                input=user_input,
-                output=collected,
-                metadata={
-                    'silent': silent,
-                    'tool_called': tool_called,
-                    'messages': messages
-                }
-            )
+            if trace:
+                span = trace.span(
+                    name='ollama-called',
+                    input=user_input,
+                    output=collected,
+                    metadata={
+                        'silent': silent,
+                        'tool_called': tool_called,
+                        'messages': messages
+                    }
+                )
 
             if tool_called:
                 yield 'data: <running-crew>\n\n'
@@ -162,45 +163,49 @@ def run_crew(crew_name: str, question: str) -> str:
 
         if agents_data is None or tasks_data is None or crew_settings is None:
             error_message = '<b>Error: Invalid crew settings</b>'
-            span = trace.span(
-                name='crew-invalid',
-                input=crew_name,
-                output=error_message,
-            )
+            if trace:
+                span = trace.span(
+                    name='crew-invalid',
+                    input=crew_name,
+                    output=error_message,
+                )
             return error_message
 
-        span = trace.span(
-            name='crew-called',
-            input=crew_name,
-            output=new_question,
-            metadata={
-                'agents': agents_data,
-                'tasks': tasks_data,
-                'crew': crew_settings,
-                'question': question,
-                'shaped': new_question,
-                'verbose': verbose_settings
-            }
-        )
-
-        for agent in agents_data:
+        if trace:
             span = trace.span(
-                name=f"Agent: {agent['name']}",
-                input=agent['role'],
-                output=agent['goal'],
+                name='crew-called',
+                input=crew_name,
+                output=new_question,
                 metadata={
-                    'backstory': agent['backstory'],
-                    'tools': agent.get('tools', [])
+                    'agents': agents_data,
+                    'tasks': tasks_data,
+                    'crew': crew_settings,
+                    'question': question,
+                    'shaped': new_question,
+                    'verbose': verbose_settings
                 }
             )
 
+        for agent in agents_data:
+            if trace:
+                span = trace.span(
+                    name=f"Agent: {agent['name']}",
+                    input=agent['role'],
+                    output=agent['goal'],
+                    metadata={
+                        'backstory': agent['backstory'],
+                        'tools': agent.get('tools', [])
+                    }
+                )
+
         for task in tasks_data:
-            span = trace.span(
-                name=f"Task: {task['name']}",
-                input=task['description'],
-                output=task['expected_output'],
-                metadata=task
-            )
+            if trace:
+                span = trace.span(
+                    name=f"Task: {task['name']}",
+                    input=task['description'],
+                    output=task['expected_output'],
+                    metadata=task
+                )
 
         for agent in agents_data:
             if 'tools' in agent:
@@ -226,9 +231,10 @@ def run_crew(crew_name: str, question: str) -> str:
 
         return f'Here is what the crew found on what you asked.<br><br>{str(result.raw)}'
     except Exception as e:
-        span = trace.span(
-            name='crew-failed',
-            input=crew_name,
-            output=str(e),
-        )
+        if trace:
+            span = trace.span(
+                name='crew-failed',
+                input=crew_name,
+                output=str(e),
+            )
         return f'The crew sent to do the job failed. {type(e).__name__}: {str(e)}'
