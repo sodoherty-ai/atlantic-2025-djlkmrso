@@ -54,6 +54,7 @@ def reset():
         })
         span.end()
 
+    if 'LANGFUSE_HOST' in env:
         trace = langfuse.trace(
             name='HAL Session started',
             user_id=user_id
