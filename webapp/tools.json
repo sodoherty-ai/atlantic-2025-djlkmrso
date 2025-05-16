@@ -2,5 +2,9 @@
   {
     "name": "tool_citizens_information",
     "description": "Government related services, travel, housing, benefits, entitlements, legal rights, or public resources in the Ireland."
+  },
+  {
+    "name": "tool_age_action",
+    "description": "Home repairs, day care facilities, age advice and improving quality of life that is not government related."
   }
 ]

@@ -4,7 +4,6 @@ verbose: false
 # ---- properties to replace out where {variable} is used. ----
 inputs:
   topic: ageaction.ie get-help
-  current_year: May 2025
 
 # ---- CREW ----
 crew:
@@ -41,8 +40,7 @@ agents:
 tasks:
   - name: research_task
     description: >
-      Conduct a thorough research about {topic}. Make sure you find any interesting and relevant information given
-      the current year is {current_year}.
+      Conduct a thorough research about {topic}.
     expected_output: >
       A list with 5 bullet points of the most relevant information about {topic} and URL/Title to the source material.
     agent: "{topic} Senior Data Researcher"
@@ -50,9 +48,8 @@ tasks:
   - name: reporting_task
     description: |
       Review the context you got and expand each topic into a full section for a report. Make sure the report is 
-      detailed and contains any and all relevant information. Each section should be structured as shown between the
-      section tags. Do not output the Section tags.
-
+      detailed and contains any and all relevant information. 
+      
       IMPORTANT! Every section must have a source line in it with the link to the source material. If there is no
       source material then do not output that section.
 
@@ -60,11 +57,10 @@ tasks:
       
       <html>
       <div>
-      <h1>{topic} for {current_year}</h1>
 
       <!-- Repeat this section for each item --!>
       <div>
-      <h2>title</h2>
+      <h4>title</h4>
       main body of text here.
       <br>
       <pre>source: <a href="url" target="_blank" rel="noopener noreferrer">title</a></pre>
@@ -72,8 +68,7 @@ tasks:
       <!--- End of repeat block --->
       </html>
 
-
     expected_output: >
       A fully fledged report with the main topics, each with a full section of information.
-      Formatted as HTML without '```'
+      Formatted as HTML without '```' tags.
     agent: "{topic} Reporting Analyst"

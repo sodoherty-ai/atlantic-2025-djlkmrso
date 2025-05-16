@@ -5,13 +5,15 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import StreamingResponse
 import json
-from langfuse import Langfuse
 from os import environ as env
 from yaml import safe_load
 from tools import available_tools
 from crewai import Crew
+from langfuse import Langfuse
 
 load_dotenv()
+
+# Lang fuse code
 user_id = env['LANGFUSE_ID']
 langfuse = Langfuse(
     public_key=env['LANGFUSE_PUBLIC_KEY'],
