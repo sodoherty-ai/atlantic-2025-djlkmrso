@@ -123,7 +123,9 @@ async def message(request: Request):
             )
 
             if tool_called:
+                yield 'data: <running-crew>\n\n'
                 yield f'data: {run_tool(tool_called, user_input)}\n\n'
+                yield 'data: <crew-finished>\n\n'
             if not silent:
                 messages.append({'role': 'assistant', 'content': collected})
             else:
